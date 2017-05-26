@@ -1,0 +1,22 @@
+<?php if(!empty($this->categoria)){ ?>
+<h2>Serviços - <?php echo $this->categoria['categoria']; ?></h2>
+<?php }else{ ?>
+<h2>Serviços</h2>
+<?php } ?>
+<ul id="lista-servicos-lista">
+    <?php if(!empty($this->servicos)) {
+        foreach($this->servicos AS $servico) {
+            ?>
+    <li>
+        <a href="/servicos/<?php echo $servico['cslug']; ?>/<?php echo $servico['slug']; ?>" title="<?php echo $servico['servico']; ?>">
+                    <?php if(empty($this->categoria)){ ?>
+                    <?php echo $servico['categoria']; ?> -
+                    <?php } ?>
+                    <?php echo $servico['servico']; ?>
+        </a>
+    </li>
+            <?php
+        }
+    }
+    ?>
+</ul>

@@ -1,0 +1,117 @@
+<?php
+$configs = Zend_Registry::get('configs');
+echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+    <head>
+        <title><?php if(!empty($this->title)) {
+                echo $this->title.' - ';
+            } echo
+
+
+        $configs->cliente->nome; ?></title>
+        <?php
+        /* Adiciona as Meta Tags */
+        $this->headMeta()
+                ->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8')
+                ->appendName('author', $configs->desenvolvedor->nome)
+                ->appendName('robots', 'index,follow')
+                ->appendName('googlebot', 'index,follow')
+                ->appendName('google', 'notranslate')
+                ->appendName('Content-Language', 'pt-br')
+                ->appendName('reply-to', $configs->cliente->email)
+                ->appendName('google-site-verification', $configs->google->verification)
+        ;
+        echo $this->headMeta();
+        /* Adiciona as Meta Tags */
+        $this->headLink()
+                ->prependStylesheet(CSS_PATH.'style.css')
+                ->prependStylesheet(CSS_PATH.'jquery.jgrowl.css')
+                ->headLink(array('rel' => 'favicon','href' => CSS_PATH.'images/favicon.ico'),'PREPEND');
+        echo $this->headLink();
+?>
+    </head>
+    <body>
+        <div id="root">
+            <div id="header">
+                <a href="/" title="Empresa">
+                    <h1><?php echo $configs->cliente->nome; ?></h1>
+                </a>
+                <ul id="menunav">
+                    <li><a href="/" title="Empresa">Empresa</a></li>
+                    <li><a href="/servicos" title="Serviços">Serviços</a></li>
+                    <li><a href="/localizacao" title="Localização">Localização</a></li>
+                    <li><a href="/faleconosco" title="Fale Conosco">Fale Conosco</a></li>
+                </ul>
+                <h3>Serviços</h3>
+                <ul id="menu-servicos">
+                    <?php if(!empty($this->lista)) {
+                        foreach($this->lista AS $servico) {
+        ?>
+                    <li><a href="/servicos/<?php echo $servico['cslug']; ?>/<?php echo $servico['slug']; ?>" title="<?php echo $servico['servico']; ?>"><?php echo $servico['servico']; ?></a></li>
+                            <?php
+                        }
+                    }
+?>
+                </ul>
+            </div>
+            <div id="content">
+                <?php echo $this->flashMessenger(); ?>
+<?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+        <div id="footer">
+            <address>Travessa Moron, 222 - Sala 101 | Humaitá | Bento Gonçalves - RS | CEP 95700-000 | <span>54 3702.1957</span> | geobg@geobg.com.br</address>
+            <ul id="menufoot">
+                <li><a href="/" title="Empresa">Empresa</a></li>
+                <li><a href="/servicos" title="Serviços">Serviços</a></li>
+                <li><a href="/localizacao" title="Localização">Localização</a></li>
+                <li><a href="/faleconosco" title="Fale Conosco">Fale Conosco</a></li>
+            </ul>
+            <div id="assinatura">
+                <div id="weentigra">
+                    <a href="<?php echo $configs->weentigra->url.'/'.$configs->cliente->dominio; ?>" title="<?php echo $configs->weentigra->nome; ?>">
+<?php echo $configs->weentigra->nome; ?>
+                    </a>
+                    <a href="<?php echo $configs->desenvolvedor->url; ?>" title="<?php echo $configs->desenvolvedor->nome; ?>">
+<?php echo $configs->desenvolvedor->nome; ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <?php
+        /* Script que deve ir em todas as páginas mas que requer php*/
+        $this->headScript()->captureStart();
+?>
+        $(document).ready(function(){
+        $(document).pngFix();
+        });
+        var flashvars = {id:<?php echo $configs->weentigra->id; ?>, cor: '<?php echo $configs->weentigra->cor; ?>'};
+        var params = {};
+        var attributes = {};
+        params.menu = "false";
+        params.wmode = "transparent";
+        swfobject.embedSWF("http://www.ween.com.br/_swf/footer.swf", "weentigra", "130", "25", "6.0.0", "http://www.ween.com.br/_swf/expressInstall.swf", flashvars, params, attributes);
+<?php if(!empty($configs->analytics->ua)) { ?>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '<?php echo $configs->analytics->ua; ?>']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+            <?php
+        }
+        $this->headScript()->captureEnd();
+        /* adiciona os javascripts */
+        $this->headScript()
+                ->prependFile('http://imasters.uol.com.br/crossbrowser/fonte.js')
+                ->prependFile(JS_PATH. 'swfobject.js')
+                ->prependFile(JS_PATH. 'jquery.pngFix.pack.js')
+                ->prependFile(JS_PATH. 'jquery-1.4.2.min.js')
+        ;
+        echo  $this->headScript();
+?>
+    </body>
+</html>

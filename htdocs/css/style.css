@@ -1,0 +1,210 @@
+* {
+    margin:0;
+    padding:0;
+}
+body{
+    background: url(images/background.jpg) top left repeat-x;
+    font-family: Verdana;
+    color: #444444;
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+    color: #444444;
+}
+a:hover{
+    color: #d9282f;
+}
+a img{
+    border: 0;
+}
+ul, li{
+    list-style: none;
+}
+#root{
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#header h1{
+    background: url(images/logo.png) top left no-repeat;
+    text-indent: -9000px;
+    width: 195px;
+    height: 156px;
+    overflow: hidden;
+    margin: 28px auto 20px;
+}
+#header{
+    float: left;
+    display: inline;
+    width: 240px;
+    margin-right: 20px;
+}
+#header li{
+    text-align: right;
+}
+#menunav a{
+    display: block;
+    border-bottom: 1px solid #d6d6d6;
+    margin: 3px 0;
+    padding: 3px 0;
+    padding-right: 20px;
+    background: url(images/marcador_menunav.png) center right no-repeat;
+}
+#menu-servicos a{
+    margin: 3px 0;
+    padding: 3px 0;
+    display: block;
+    font-size: 90%;
+}
+#menu-servicos li{
+    background: url(images/marcador_servicos.png) center right no-repeat;
+    padding-right: 20px;
+    border-bottom: 1px solid #d6d6d6;
+}
+#content{
+    float: left;
+    display: inline;
+    width: 540px;
+    padding-top: 85px;
+}
+#content p{
+    padding: 2px 10px;
+    text-align: justify;
+    text-indent: 25px;
+}
+
+#content h2{
+    padding: 3px 0 3px 10px;
+    border-left: 3px solid #b4b4b4;
+    color: #d9282f;
+    margin: 15px 0 5px;
+    font-size: 18px;
+}
+#header h3{
+    color: #d9282f;
+    text-align: right;
+    padding: 3px 10px 3px 0px;
+    border-right: 3px solid #b4b4b4;
+    margin: 15px 0 5px;
+    font-size: 16px;
+}
+#lista-servicos li{
+    width: 136px;
+    height: 200px;
+    float: left;
+    display: inline;
+    text-align: right;
+    margin: 5px 21px;
+    font-size: 80%;
+}
+#lista-servicos li img{
+    background: #606060;
+    padding: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin-bottom: 3px;
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    display: block;
+}
+#footer{
+    text-align: center;
+    clear: both;
+    background: url(images/background_footer.jpg) top left repeat-x;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+address{
+    font-style: normal;
+    font-size: 80%;
+    margin-bottom: 20px;
+    color: #FFF;
+}
+address span{
+    font-size: 120%;
+}
+#content p.warning, #content p.error, #content p.sucess{
+    margin: 10px 0;
+    border: 1px solid;
+    overflow: hidden;
+    padding: 10px;
+    padding-left: 40px;
+    background: #FFF center left no-repeat;
+    background-position: 10px;
+    font-weight: bold;
+    clear: both;
+    text-align: left;
+}
+#content p.warning{
+    border-color: #F57200;
+    color: #F57200;
+    background-image: url(images/tip_warning.png);
+}
+#content p.error{
+    border-color: #c10000;
+    color: #c10000;
+    background-image: url(images/tip_error.png);
+}
+#content p.sucess{
+    border-color: #79A12C;
+    color: #79A12C;
+    background-image: url(images/tip_sucess.png);
+}
+#content .errors li{
+    color: #F00;
+    list-style: none;
+    padding: 3px 5px;
+    margin: 2px 0;
+}
+#menufoot{
+    clear: both;
+    width: 370px;
+    margin: 10px auto;
+    overflow: hidden;
+    font-size: 90%;
+}
+#menufoot a{
+    color: #FFF;
+    display: block;
+    padding: 0 10px;
+}
+#menufoot li{
+    border-right: 1px solid #FFF;
+}
+#menufoot li:last-child{
+    border: 0;
+}
+#menufoot li{
+    float:left;
+    display: inline;
+}
+#assinatura{
+    clear: both;
+}
+#imgServico{
+    float: left;
+    display: inline;
+    margin: 0 5px 5px 10px;
+}
+#lista-servicos.destaques li{
+    margin: 10px 50px;
+    width: 160px;
+}
+#lista-servicos.destaques li img{
+    width: 160px;
+}
+legend{
+    margin-bottom: 20px;
+    display: block;
+}
+#descricaoEmpresa{
+    font-size: 90%;
+}
+#lista-servicos-lista li{
+    margin-bottom: 10px;
+    padding-left: 20px;
+    margin-left: 25px;
+    background: url(images/marcador_menunav.png) center left no-repeat;
+}

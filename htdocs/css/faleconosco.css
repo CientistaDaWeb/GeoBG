@@ -1,0 +1,39 @@
+#formFaleconosco{
+    padding-left: 10px;
+}
+.input{
+    margin-bottom: 5px;
+}
+label{
+    display: inline-block;
+    vertical-align: top;
+    color:#444444;
+}
+.submit input{
+    margin-left: 326px;
+    border: 1px solid #444444;
+    background: #000;
+    color: #FFF;
+    padding: 3px 5px;
+}
+dd input, dd textarea{
+    color: #d9282f;
+    border: 1px solid #444444;
+    padding: 2px 3px;
+    margin-top: 3px;
+    width: 500px;
+    background: #FFF;
+}
+label.required{
+    font-weight: bold;
+}
+dt label{
+    margin-top: 5px;
+    display: inline-block;
+}
+dd #enviar, dd #entrar, dd #solicitar{
+    background: none;
+    border: none;
+    text-align: right;
+    padding: 5px;
+}

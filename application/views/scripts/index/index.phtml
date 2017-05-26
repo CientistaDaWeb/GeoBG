@@ -1,0 +1,21 @@
+<h2>Empresa</h2>
+<p>GEOBG ENGENHARIA E GEOMENSURA atua na área de soluções geodésicas com suporte técnico especializado, desenvolvendo projetos e consultorias eficientes, completas e responsáveis.</p>
+<p>Temos como premissa atender de forma ágil e eficaz nossos clientes. Somos especializada em Georrefenciamento, Avaliações de Imóveis e na Segurança do Trabalho, tendo como sua base de atuação a Serra Gaúcha.</p>
+<p>A atividade desenvolvida pela nossa equipe profissional prima pela excelência da prestação de seus serviços e no atendimento aos clientes, contando com a competência, dedicação e lealdade de profissionais especializados.</p>
+<p>A empresa possui equipamentos de última geração, como receptor GNSS e Estação Total para o levantamento de campo e além de estrutura física composta por veículo e escritório com equipamentos de informática, com softwares licenciados e plotters, atendendo os altos padrões de qualidade exigidos nas realizações dos serviços.</p>
+<h2>Serviços</h2>
+<ul id="lista-servicos" class="destaques">
+    <?php if(!empty($this->destaques)){
+    foreach($this->destaques AS $servico){
+        ?>
+    <li>
+        <a href="/servicos/<?php echo $servico['slug']; ?>" title="<?php echo $servico['servico']; ?>">
+        <img src="<?php echo IMAGE_PATH.'servicos_categorias/thumbs/'.$servico['imagem'];?>" alt="<?php echo $servico['servico']; ?>" />
+        <?php echo $servico['categoria']; ?>
+        </a>
+    </li>
+    <?php
+    }
+}
+?>
+</ul>
